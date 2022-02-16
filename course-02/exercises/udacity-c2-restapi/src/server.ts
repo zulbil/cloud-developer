@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 import express from 'express';
 import { sequelize } from './sequelize';
 
@@ -8,6 +10,7 @@ import bodyParser from 'body-parser';
 import { V0MODELS } from './controllers/v0/model.index';
 
 (async () => {
+  
   await sequelize.addModels(V0MODELS);
   await sequelize.sync();
 
@@ -28,7 +31,7 @@ import { V0MODELS } from './controllers/v0/model.index';
   // Root URI call
   app.get( "/", async ( req, res ) => {
     res.send( "/api/v0/" );
-  } );
+  });
   
 
   // Start the Server
