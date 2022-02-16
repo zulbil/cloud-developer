@@ -1,13 +1,14 @@
+
 export const config = {
   "dev": {
-    "username": "",
-    "password": "",
-    "database": "",
-    "host": "",
-    "dialect": "postgres",
-    "aws_region": "us-east-2",
-    "aws_profile": "default",
-    "aws_media_bucket": "udagram-ruttner-dev"
+    "username": process.env.MYSQL_USERNAME,
+    "password": process.env.MYSQL_PASSWORD,
+    "database": process.env.MYSQL_DATABASE,
+    "host": process.env.MYSQL_HOST,
+    "dialect": "mysql",
+    "aws_region": process.env.AWS_REGION,
+    "aws_profile":process.env.AWS_PROFILE,
+    "aws_media_bucket": process.env.AWS_MEDIA_BUCKET
   },
   "prod": {
     "username": "",
@@ -15,5 +16,8 @@ export const config = {
     "database": "udagram_prod",
     "host": "",
     "dialect": "postgres"
+  },
+  "jwt": {
+    "secret": "helloworld"
   }
 }
