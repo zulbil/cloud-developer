@@ -12,8 +12,7 @@ import { config } from '../../../../config/config';
 const router: Router = Router();
 
 async function generatePassword(plainTextPassword: string): Promise<string> {
-    const saltRounds = 10;
-    const salt = await bcrypt.genSalt(saltRounds);
+    const salt = await bcrypt.genSalt(10);
     return await bcrypt.hash(plainTextPassword, salt);
 }
 
